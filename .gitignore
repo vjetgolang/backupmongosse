@@ -1,0 +1,10 @@
+logs
+*.log
+node_modules/
+.env
+dist/
+deploy/
+backup/
+/deploy.sh
+build.sh
+build_lastest.sh

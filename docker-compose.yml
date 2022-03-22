@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  mongodb_backup:
+    image: vtuanjs/mongodb_backup:lastest
+    networks:
+      - net
+    ports: 
+      - "5050:5050"
+    environment:
+      NODE_ENV: 'production'
+      GOOGLE_CLIENT_MAIL: ${GOOGLE_CLIENT_MAIL}
+      GOOGLE_PRIVATE_KEY: ${GOOGLE_PRIVATE_KEY}
+      GOOGLE_FOLDER_ID: ${GOOGLE_FOLDER_ID}
+      MONGO_BACKUP_USER: ${MONGO_BACKUP_USER}
+      MONGO_BACKUP_PASSWORD: ${MONGO_BACKUP_PASSWORD}
+      MONGO_URI: ${MONGO_URI}
+      # MONGO_HOST: ${MONGO_HOST}
+      # MONGO_PORT: ${MONGO_PORT}
+      IS_FORCE_BACKUP: ${IS_FORCE_BACKUP}
+      HTTP_FORCE_BACKUP_TOKEN: ${HTTP_FORCE_BACKUP_TOKEN}
+networks:
+  net:
